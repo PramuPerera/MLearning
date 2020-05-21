@@ -43,7 +43,7 @@ plt.show()
 scores= np.exp(scores)
 scores = scores/np.sum(scores, axis=0)
 predictions = np.argmax(scores, axis=0)
-print(np.mean(predictions==test_labels))
+print('Accuracy : ' + str(np.mean(predictions==test_labels)))
 
 
 

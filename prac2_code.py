@@ -18,10 +18,6 @@ train_labels = np.squeeze(np.array(train_data[:, :1])).astype(int)
 test_imgs = np.asfarray(test_data[:, 1:]) 
 test_labels = np.squeeze(np.array(test_data[:, :1])).astype(int)
 
-'''train_imgs = train_imgs[train_labels<=1,:]
-train_labels = train_labels[train_labels<=1]
-test_imgs= test_imgs[test_labels<=1,:]
-test_labels = test_labels[test_labels<=1]'''
 
 #counting white pixels
 train_imgs = np.sum(train_imgs>25,axis=1)
@@ -43,7 +39,7 @@ plt.show()
 scores= np.exp(scores)
 scores = scores/np.sum(scores, axis=0)
 predictions = np.argmax(scores, axis=0)
-print(np.mean(predictions==test_labels))
+print('Accuracy : ' + str(np.mean(predictions==test_labels)))
 
 
 
